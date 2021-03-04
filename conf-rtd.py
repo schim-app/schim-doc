@@ -6,6 +6,10 @@ import subprocess
 # Preparations #
 ################
 
+# Clone git submodules
+subprocess.call('git submodule sync', shell=True)
+subprocess.call('git submodule update --init --recursive', shell=True)
+
 # Scripts must be made executable on ReadTheDocs, but we just give full
 # permissions to all files to prevent future headaches
 subprocess.call('chmod -R 777 ./', shell=True)
@@ -32,9 +36,9 @@ subprocess.call('make graphs', shell=True)
 # Debugging on ReadTheDocs #
 ############################
 
-"""
 # Only uncomment this section if something is going wrong on ReadTheDocs
 
+"""
 # In the Sphinx documentation, this function is said to require three arguments.
 # But when the third one is positional, an exception is raised.
 # We don't use it anyway, so set its default value to None.
