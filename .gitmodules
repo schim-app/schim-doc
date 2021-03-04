@@ -1,0 +1,3 @@
+[submodule "schim"]
+	path = schim
+	url = https://github.com/schim-app/schim
