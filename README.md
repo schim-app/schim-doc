@@ -1,7 +1,7 @@
 
 # <img align="left" width="25" src="https://github.com/schim-app/schim/raw/master/res/img/icon.svg"/> Schim Documentation
 
-<img src="https://img.shields.io/readthedocs/schim?color=%232980B9&label=ReadTheDocs"/>
+[![Read the Docs](https://img.shields.io/readthedocs/schim?color=blue&label=ReadTheDocs)](https://schim.rtfd.io)
 
 The [documentation](https://schim.rtfd.io) is built using
 [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted on the great
