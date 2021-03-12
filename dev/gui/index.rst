@@ -5,17 +5,38 @@ GUI
 .. toctree::
 
 .. important:: If you need to quickly find out where a graphical item is defined
-   in the source code, go to
+   in the source code, open the application and activate
    
-   .. centered:: :menuselection:`Help-->Toggle Developer Hints`
+   .. centered:: :menuselection:`Help --> Toggle Developer Hints`
 
-   in the application. This will display where the focused widget is defined.
+   Then place your mouse over a widget. This will display in the window's status
+   bar where the widget's source code is. **This is probably the quickest way to
+   get started.**
+
+Directory structure
+===================
+
+All code related to the GUI resides in `src/ui/`. The directory structure
+(including the most important header files) is as follows:
+
+.. code-block::
+
+   src/ui/
+   ├── objects/      # GObjects and subclasses
+   ├── widgets/      # Reusable QWidgets
+   ├── windows/      # Windows and dialogs
+   ├── mainwindow.h  # MainWindow
+   ├── sheetview.h   # SheetView
+   ├── sheetscene.h  # SheetScene
+   ├── operations.h  # Scene operations
+   ├── commands.h    # Undo-able commands
+   └── vim.h         # Vim mode
 
 The main window
 ===============
 
-The class holds a static instance of ``MainWindow`` called ``instance``, which
-allows other classes to access the main window.
+The main window is implemented as a singleton in the class ``MainWindow``. The
+active instance can be obtained using ``MainWindow::getInstance``.
 
 .. tabs::
 
@@ -23,7 +44,6 @@ allows other classes to access the main window.
 
       .. doxygenclass:: MainWindow
          :outline:
-         :no-link:
 
    .. tab:: Details
 
@@ -36,79 +56,12 @@ allows other classes to access the main window.
 The schematic editor
 ====================
 
-Qt provides `QGraphicsView`_ and `QGraphicsScene`_ to visually represent
-`QGraphicsItem`_-s. You should have at least a basic knowledge of these classes
-if you wish to develop the GUI. This project doesn't use these classes directly.
-Instead we use their subclasses: :ref:`SheetView`, :ref:`SheetScene` and
-:ref:`GObject` respectively, which we have defined.
+.. include:: schematic-editor.rst
 
-GObject
--------
-
-|startovw|
-
-.. rubric:: Inheritance graph
-.. image:: /_build/html/doxygen/classGObject__inherit__graph.svg
-   :align: center
-
-|br|
-
-.. rubric:: Collaboration graph
-.. image:: /_build/html/doxygen/classGObject__coll__graph.svg
-   :align: center
-
-|endcollapse|
-
-An object is visually represented as a :ref:`GObject`, which is a wrapper around
-an :ref:`Object`. Derived classes follow the same naming convention. Namely, the
-graphical class is named by prepending the corresponding model class name with
-the letter 'G' (for graphical). For example, a :ref:`Line` is wrapped by
-:ref:`GLine`.
-
-The following classes are derived from :ref:`GObject`:
-
-* `GLine <../../doxygen/classGLine.html>`_
-* `GRect <../../doxygen/classGRect.html>`_
-* `GText <../../doxygen/classGText.html>`_
-* `GCompositeObject <../../doxygen/classGCompositeObject.html>`_
-* `GHeader <../../doxygen/classGHeader.html>`_
-
-.. tabs::
-
-   .. tab:: Outline
-
-      .. doxygenclass:: GObject
-         :outline:
-
-   .. tab:: Details
-
-      .. doxygenclass:: GObject
-         :no-link:
-         :undoc-members:
-* `Full reference <../../doxygen/classGObject.html>`_
-     ..
-
-.. _QGraphicsView: https://doc.qt.io/qt-5/qgraphicsview.html
-.. _QGraphicsScene: https://doc.qt.io/qt-5/qgraphicsscene.html
-.. _QGraphicsItem: https://doc.qt.io/qt-5/qgraphicsitem.html
+Dialogs
+=======
 
 Vim mode
 ========
 
-Vim mode is implemented in `src/ui/vim.h` and `src/ui/vim.cpp`.
-
-.. todo:: Add more details.
-
-.. tabs::
-
-   .. tab:: Outline
-
-      .. doxygennamespace:: Vim
-         :outline:
-
-   .. tab:: Details
-
-      .. doxygennamespace:: Vim
-         :no-link:
-* `Full reference <../../doxygen/namespaceVim.html>`_
-     ..
+.. include:: vim.rst

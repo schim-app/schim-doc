@@ -20,8 +20,6 @@ help:
 all: html
 
 html: doxygen
-	@echo "Generate directory tree file."
-	@scripts/gen-tree.sh
 	@echo "Generating man pages..."
 	@cd schim/docs; "${MAKE}" prepare-man
 	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS}

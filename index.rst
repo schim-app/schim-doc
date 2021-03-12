@@ -52,4 +52,5 @@ without those mappings.
    contribute.rst
    schim/docs/index.rst
    dev/index.rst
+   docs/index.rst
 

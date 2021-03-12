@@ -1,6 +1,6 @@
-=======
-File IO
-=======
+========
+File I/O
+========
 
 .. toctree::
 
@@ -48,3 +48,4 @@ contains the header element. This version opens the file for reading and
 constructs an XML stream. Then it calls the first version of the function to
 process the stream.
 
+.. todo:: Explain the necessary steps to add a new parser/writer
