@@ -19,7 +19,7 @@ Schim is made up of multiple repositories:
 `Schim documentation <https://github.com/schim-app/schim-doc>`_
    This is where Schim's complete documentation resides. You are reading it
    right now!
-`Schim extras <https://github.com/schim-app/schim-doc>`_
+`Schim extras <https://github.com/schim-app/schim-extra>`_
    This is the cherry on top of the cake. It contains anything that can be
    used to enhance the user experience, but which is not part of the
    application. This includes configuration files for shells, syntax for text

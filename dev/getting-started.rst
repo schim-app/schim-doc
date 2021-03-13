@@ -137,5 +137,15 @@ Adding a configuration option
 Adding and modifying dialogs
 ----------------------------
 
+This is probably the task with the slightest learning curve. You do not need to
+have any deep knowledge of the internals of the app, and most of the development
+here is visual by nature.
+
+Working on the schematic editor
+-------------------------------
+
+If you are going to develop the schematic editor, you should get very familiar
+with the :ref:`Model`.
+
 Additional resources
 ====================
